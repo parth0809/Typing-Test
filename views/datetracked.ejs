@@ -1,0 +1,30 @@
+<%- include("partials/adminHeader"); -%>
+
+
+
+<table class="table-style">
+    <h3 style="text-align: center;">DATE : <%=data[0].date%></h3>
+    <th>
+        <tr>
+            <td> NAME</td>
+            <td> MOBILE NUMBER</td>
+            <td > LANGUAGE  </td>
+            <td > TOTAL KEYPRESSED  </td>
+            <td > CORRECT KEYPRESSED  </td>
+            <td > TIME(s)  </td>
+        </tr>
+    </th>
+    <% data.forEach(function(da){ %>
+        <tr>
+            <td><%= da.username%></td>
+            <td><%= da.mobile_number%></td>
+            <td><%=da.language %></td>
+            <td><%=da.total_keypressed_ %></td>
+            <td><%=da.total_correct_keypressed %></td>
+            <td><%=da.total_time %></td>
+        </tr>
+    <% });%>
+    
+</table>
+
+<%- include("partials/footer"); -%>

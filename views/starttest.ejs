@@ -1,0 +1,56 @@
+<%- include("partials/header2"); -%>
+<div>
+    <div class="align-right">
+        <h3 > Remaining Time : <span id="safeTimerDisplay"><%= time%></span> sec</h3>
+        <br><br>
+    </div>
+</div>
+<div class="float-right">
+    <p><%-para%></p>
+</div>
+<div class="float-left" >
+    <p id="p1"></p>
+<form method="post" action="/starttest">
+    <input type="hidden" name="language" id="hiddenInput" value="<%-language%>"/>
+    <input type="hidden" name ="time" id="hiddenTime" value="<%-time%>"/>
+    <input type="hidden" name ="para" id="hiddenPara" value="<%-para%>"/>
+    <input type="hidden" name="typed_para" id="hiddentext" value="">
+    <input type="submit" id="clickbutton" name="submit" value="Submit"hidden/>
+</form>
+</div>
+</div>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+
+
+function timer(){
+    let i=0;
+    let j=0;
+    var sec = '<%-time%>';
+    
+    var timer = setInterval(function(){
+        document.getElementById('safeTimerDisplay').innerHTML=sec;
+        sec--;
+        if (sec < 0) {
+            document.getElementById("hiddentext").value=document.getElementById('p1').innerHTML;
+            document.getElementById('clickbutton').click();
+        }
+    }, 1000);
+}
+timer();
+document.addEventListener('keypress',(event)=>{
+    var name=event.key; 
+    if(name!="Enter")
+    {
+    document .getElementById("p1").innerHTML=document .getElementById("p1").innerHTML+name;
+    }
+})
+document.addEventListener('keydown',(event)=>{
+    const key = event.key; 
+    if (key === "Backspace") {
+        document .getElementById("p1").innerHTML=document .getElementById("p1").innerHTML.substr(0,document .getElementById("p1").innerHTML.length -1);
+    }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<%- include("partials/header"); -%>
+
+
+<div class="contain-register">
+    <div class="contain-text"> <h1>Add Data</h1></div>
+    <div>
+        <form class="form-register" action="/adddata" method="post">
+            <label>Language :</label>
+            <br>
+            <label for="eng">English</label>
+            <input type="radio" name="language" id="eng" value="eng" checked>
+            <label for="hin">Hindi</label>
+            <input type="radio" name="language"id="hin" value="hin"><br>
+            <textarea name="Text" cols="30" rows="10"></textarea>
+            <button>Submit</button>
+        </form>
+    </div>    
+</div>
+
+<%- include("partials/footer"); -%>

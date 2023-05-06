@@ -1,0 +1,29 @@
+<%- include("partials/header2"); -%>
+<div class="align-center">
+    <h1>Typing Test Report of : <%=data.username%> </h1>
+</div>
+<br>
+<div class="align-left padright">
+    <h5>Language : <%=data.language%></h5>
+    <h5>Time : <%=data.time%> sec</h5>
+    <h5>Total key stroked : <%=data.typed_para.length%></h5>
+    <h5>Correct key stroked :<%=data.correct%></h5>
+    <h5>Wrong Key Stroked :<%=data.wrong%></h5>
+    <% if(data.typed_para.length==0){%>
+        <h5>Average accuracy : 0</h5>
+    <%}else{%>
+        <h5>Average accuracy : <%=(100*(data.correct /data.typed_para.length)).toFixed(2)%> </h5>
+    <%}%>
+    <% if(data.time==0){%>
+        <h5>WPM : 0</h5>
+    <%}else{%>
+        <h5>WPM : <%=(60*(data.correct/data.time)).toFixed(2)%> keys /min </h5>
+    <%}%>
+    <br>
+    <h4>ORIGINAL PARA</h4>
+    <p><%=data.original_para%></p>
+    <br>
+    <h4>TYPED PARA</h4>
+    <p><%=data.typed_para%></p>
+</div>
+<%- include("partials/footer"); -%>

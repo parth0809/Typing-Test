@@ -1,0 +1,17 @@
+<%- include("partials/header2"); -%>
+
+
+<div class="contain-register">
+    <div class="contain-text"> <h1>TYPING TEST</h1></div>
+    <div class="contain-text"> <h3>FOUND TEST!</h3></div><br>
+    <div style="padding-left: 2%;">
+        <h5>   Username : <%= username%></h5>
+        <h5>   Mobileno : <%= mobilenumber%></h5>
+        <h5>   Language : <%= language%></h5>
+        <h5>   Time : <%- Math.floor( time/3600 )%>:<%- Math.floor( (time/60)%60 )%>:<%- Math.floor( time%60 )%></h5>
+        <h5>   No. of para : <%= noofpara%></h5
+    </div>    
+    <button class="btn-style"><a href="starttest" style="color: black;">Start Test</a></button>    
+</div>
+
+<%- include("partials/footer"); -%>

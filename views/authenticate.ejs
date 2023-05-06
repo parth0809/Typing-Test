@@ -1,0 +1,19 @@
+<%- include("partials/header"); -%>
+
+
+<div class="contain-register">
+    <div class="contain-text"> <h1>Enter Your credentials</h1></div>
+    <div>
+        <form class="form-register" action="/authenticate" method="post">
+            <label>USERNAME :</label>
+            <input type="text" name ="username" placeholder="username" required>
+            <br><br>
+            <label>Mobile no :</label>
+            <input type="text" name ="mobileno" placeholder="9999999999" required>
+            <br><br>
+            <button type="SUBMIT">Submit</button>
+        </form>
+    </div>    
+</div>
+
+<%- include("partials/footer"); -%>

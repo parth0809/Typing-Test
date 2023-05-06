@@ -1,0 +1,19 @@
+<%- include("partials/header"); -%>
+
+
+<div class="contain-register">
+    <div class="contain-text"> <h1>LOGIN</h1></div>
+    <div>
+        <form class="form-register" action="/login" method="post">
+            <label>USERNAME :</label>
+            <input type="text" name ="username" placeholder="username" required>
+            <br><br>
+            <label>PASSWORD :</label>
+            <input type="password" name ="password" placeholder="********" required>
+            <br><br>
+            <button type="SUBMIT">Submit</button>
+        </form>
+    </div>    
+</div>
+
+<%- include("partials/footer"); -%>

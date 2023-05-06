@@ -1,0 +1,29 @@
+<%- include("partials/adminHeader"); -%>
+
+<div class="contain-register">
+    <div class="contain-text"> <h1>Create Test</h1></div>
+    <div>
+        <form class="form-register" action="/settest" method="post">
+            <label>USERNAME :</label>
+            <input type="text" name ="username" placeholder="username" required>
+            <br><br>
+            <label>Mobile Number :</label>
+            <input type="test" name ="mobileno" placeholder="9999999999" required>
+            <br><br>
+            <label for="eng">English</label>
+            <input type="radio" name="language" id="eng" value="eng" checked>
+            <label for="hin">Hindi</label>
+            <input type="radio" name="language"id="hin" value="hin">
+            <br><br>
+            <label>No of para</label>
+            <input type="number" name="NUMBER" required >
+            <br><br>
+            <label>Time</label><br>
+            <input value="00:00:00" type="time" name="time" step="1" required>
+            <br><br>
+            <button type="SUBMIT">Submit</button>
+        </form>
+    </div>    
+</div>
+
+<%- include("partials/footer"); -%>

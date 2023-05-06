@@ -1,0 +1,16 @@
+<%- include("partials/adminHeader"); -%>
+
+
+<div class="contain-register">
+    <div class="contain-text"> <h1>Enter Your credentials</h1></div>
+    <div>
+        <form class="form-register" action="/date-track" method="post">
+            <label>DATE  :</label>
+            <input type="date" name ="date" required>
+            <br><br>
+            <button type="SUBMIT">Submit</button>
+        </form>
+    </div>    
+</div>
+
+<%- include("partials/footer"); -%>
