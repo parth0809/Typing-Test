@@ -1,6 +1,4 @@
-# Typing-Test
-# Typing-Test
-# Typing-Test
-# Typing-Test
-# Typing-Test
-# Typing-Test
+CREATE .env file
+add DBURI= "mongodb_uri"
+
+
