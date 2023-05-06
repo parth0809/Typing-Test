@@ -1,4 +1,4 @@
-#CREATE .env file
-/ADD DBURI= "mongodb_uri"
+CREATE .env file <br />
+ADD DBURI= "mongodb_uri"
 
 
