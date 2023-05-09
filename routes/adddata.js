@@ -18,13 +18,39 @@ router.get('/',(req,res)=>{
 router.post('/',(req,res)=>{
     let lang=req.body.language;
     let data=req.body.Text;
-    Type.findOneAndUpdate({ language: lang },{"$push":{"data":data}},(err, result) => {
+    Type.findOne(({language:lang}),(err,docs) =>{
         if(err)
         {
             console.log(err);
         }
-      });
-      
+        else
+        {
+            if(docs)
+            {
+                Type.findOneAndUpdate({ language: lang },{"$push":{"data":data}},(err, result) => {
+                    if(err)
+                    {
+                        console.log(err);
+                    }
+                  });
+            }
+            else
+            {
+                let type=new Type({
+                    language:lang,
+                    data:data
+                });
+                type.save(function(err,result){
+                    if(err)
+                    console.log(err);
+                    else{
+                    res.redirect('/adddata')        
+                }
+                });
+            }
+        }
+    })
+    
     res.redirect("/adddata")
 });
 
